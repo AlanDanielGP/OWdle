@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>OWdle</title>
+</head>
+<body>
+    <!-- Encabezado del sitio -->
+    <h1 class="titulo-OWdle"><span class="text-orange">OW</span>DLE</h1>
+
+    <!-- Tarjeta de indicaciones -->
+    <div class="tarjeta-indicaciones">
+
+        <h2 class="indicaciones-superiores">ADIVINA EL HÉROE DE OW2!</h2>
+        <h3 class="indicaciones-inferiores">ESCRIBE CUALQUIER HÉROE PARA EMPEZAR</h3>
+        <h3 class="texto-pistas">Pistas</h3>
+
+        <div class="contenedor-botones">
+            <div class="contenedor-boton-texto-pistas">
+                <button class="boton-pista" style="background-image: url('iconos/microfono-circular.png')"></button>
+                <button class="texto-boton-pista">Frase</button>
+            </div>
+            <div class="contenedor-boton-texto-pistas">
+                <button class="boton-pista" style="background-image: url('iconos/mando.png')"></button>
+                <button class="texto-boton-pista">Habilidad</button>
+            </div>
+            <div class="contenedor-boton-texto-pistas">
+                <button class="boton-pista" style="background-image: url('iconos/usuario.png')"></button>
+                <button class="texto-boton-pista">Silueta</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contenedor-input-boton">
+        <input id="inputBusqueda" type="text" placeholder="Escribe el nombre del héroe aquí...">
+        <button id="crearTablaBtn" type="button">uwu</button>
+        <div id="opciones" class="opciones"></div>
+    </div>
+    <div id="contenedorTabla"></div>
+    
+    <div class="contenedor-kofi">
+        <button class="boton-kofi" style="background-image: url(imagenes/kofi.png);"></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

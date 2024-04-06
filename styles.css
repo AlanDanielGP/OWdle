@@ -1,0 +1,266 @@
+/* Estilos globales del cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('imagenes/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh; /* 100% de la altura de la ventana */
+}
+
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'ow-font';
+    src: url('fuentes/OVERWATCH.ttf');
+}
+
+@font-face {
+    font-family: 'dle-font';
+    src: url('fuentes/ethnocentricrg.otf') format('opentype');
+}
+
+/* Encabezado del sitio */
+.titulo-OWdle {
+    text-align: center;
+    font-family: dle-font;
+    font-size: 3rem;
+}
+
+/* Estilo del texto "OW" en naranja */
+.text-orange {
+    color: #f06414;
+    font-family: ow-font;
+}
+
+/* Estilos de la tarjeta de indicaciones */
+.tarjeta-indicaciones {
+    width: 60%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 1px 20px 1px 20px;
+    text-align: center;
+    border-radius: 8px;
+    background: #25384b;
+    border: 1px solid #f06414;
+}
+
+/* Estilos responsivos de la tarjeta de indicaciones */
+@media screen and (max-width: 768px) {
+    .tarjeta-indicaciones {
+        width: 60%;
+        max-width: none;
+    }
+}
+
+/* Estilos de las indicaciones superiores */
+.indicaciones-superiores {
+    margin-bottom: 5px; /* Espaciado inferior */
+    color: #ffffff;
+    font-size: 1.2rem;
+    font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
+}
+
+/* Estilos de las indicaciones inferiores */
+.indicaciones-inferiores {
+    margin-top: 5px; /* Espaciado superior */
+    margin-bottom: 0;
+    color: #979797;
+    font-size: 1.1rem;
+    font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
+}
+
+.texto-pistas {
+    font-size: 1.1rem;
+    font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
+    margin-bottom: 0px;
+    color: #000000;
+}
+
+.contenedor-botones {
+    display: flex;
+    justify-content: space-around; /* Distribuir los botones de manera uniforme */
+    padding-bottom: 10px;
+}
+
+.contenedor-boton-texto-pistas {
+    width: 30%; /* Ancho relativo del contenedor de botón-texto-pista */
+    max-width: 200px; /* Ancho máximo del contenedor de botón-texto-pista */
+    padding: 3%;
+    display: flex; /* Utilizar flexbox */
+    flex-direction: column; /* Apilar elementos verticalmente */
+    justify-content: center; /* Centrar verticalmente el contenido */
+    align-items: center; /* Centrar horizontalmente el contenido */
+}
+
+.boton-pista {
+    width: 100%; /* Ancho relativo del botón */
+    height: 60px; /* Altura automática para mantener la proporción */
+    background-size: contain; /* Ajustar la imagen para que quepa completamente dentro del botón */
+    background-position: center; /* Centrar la imagen dentro del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent; /* Establecer el color de fondo transparente */
+    background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.texto-boton-pista {
+    width: 100%; /* Ancho relativo del botón de texto */
+    height: max-content; /* Altura automática para ajustarse al contenido */
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: max(1vw, 11px);
+    font-weight: bold;
+    font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
+    text-align: center; /* Centrar el texto horizontalmente */
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/*Input*/
+.contenedor-input-boton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+.contenedor-input-boton input[type="text"] {
+    flex: 1;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
+}
+
+.contenedor-input-boton button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    margin-left: 2px;
+}
+
+.opciones {
+    position: absolute;
+    width: calc(100% - 2px);
+    max-width: 400px;
+    background-color: #25384b;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    top: calc(100% + 5px); /* Ajusta la posición de la lista debajo del input */
+    left: 0; /* Ajusta la posición izquierda de la lista */
+}
+
+.opciones.visible {
+    display: block;
+}
+
+.imagen-opcion {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.opcion {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.opcion:hover {
+    background-color: #4e769e; /* Cambiar el color de fondo al pasar el mouse */
+}
+/*Final input*/
+
+/*Tabla heroes -----------------------------=>*/
+.contenedor-tabla {
+    overflow-x: auto; /* Añadir barra de desplazamiento horizontal cuando sea necesario */
+    overflow-y: hidden; /* Ocultar la barra de desplazamiento vertical */
+    text-align: center; /* Centrar contenido horizontalmente */
+    padding-left: 2px;
+}
+
+.tabla-heroes-seleccionados {
+    display: none; /* Ocultar la tabla inicialmente */
+    opacity: 0; /* Configurar opacidad inicial */
+    transition: opacity 0.5s ease; /* Agregar una transición de opacidad */
+    height: 70px;
+    white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.tabla-heroes-seleccionados.mostrar {
+    display: inline-flex;
+    opacity: 1;
+}
+
+.tabla-heroes-seleccionados div {
+    flex: 0 0 auto; /* Evitar que los elementos se ajusten automáticamente */
+    width: 68px; /* Ancho de los elementos */
+    height: 100%; /* Altura máxima igual a la altura del contenedor */
+    margin: 0 3px; /* Margen entre los elementos */
+    border: solid 1px #f06414;
+    display: flex;
+    align-items: center; /* Centrar verticalmente el contenido */
+    justify-content: center; /* Centrar horizontalmente el contenido */
+    color: #ffffff;
+}
+
+.imagen-container {
+    overflow: hidden; /* para evitar que la imagen se salga del contenedor */
+    display: flex; /* Usamos flexbox para alinear vertical y horizontalmente */
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+}
+
+.imagen-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+@media (max-width: 530px) {
+    .contenedor-tabla {
+        overflow-x: scroll; /* Añadir barra de desplazamiento horizontal fija */
+    }
+
+    .tabla-heroes-seleccionados {
+        width: 100%; /* Ancho del contenedor igual al 100% */
+    }
+}
+
+/*Boton Kofi-------------------------------------------=>*/
+.contenedor-kofi {
+    display: flex;
+    justify-content: space-around; /* Distribuir los botones de manera uniforme */
+    padding-top: 50px;
+}
+
+.boton-kofi {
+    width: 200px; /* Ancho relativo del botón */
+    height: 35px; /* Altura automática para mantener la proporción */
+    background-size: contain; /* Ajustar la imagen para que quepa completamente dentro del botón */
+    background-position: center; /* Centrar la imagen dentro del botón */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent; /* Establecer el color de fondo transparente */
+    background-repeat: no-repeat; /* Evitar que la imagen se repita */
+}
