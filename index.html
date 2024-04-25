@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>OWdle</title>
 </head>
 <body>
@@ -15,9 +16,9 @@
 
         <h2 class="indicaciones-superiores">ADIVINA EL HÉROE DE OW2!</h2>
         <h3 class="indicaciones-inferiores">ESCRIBE CUALQUIER HÉROE PARA EMPEZAR</h3>
-        <h3 class="texto-pistas">Pistas</h3>
+        <h3 class="texto-pistas" id="texto_pistas">Pistas</h3>
 
-        <div class="contenedor-botones">
+        <div class="contenedor-botones" id="id-contenedor-de-botones">
             <div class="contenedor-boton-texto-pistas">
                 <button class="boton-pista" style="background-image: url('iconos/microfono-circular.png')"></button>
                 <button class="texto-boton-pista">Frase</button>
@@ -39,11 +40,23 @@
         <div id="opciones" class="opciones"></div>
     </div>
     <div id="contenedorTabla"></div>
+
+    <div id="id-tarjeta-informacion-ganadora" class="tarjeta-informacion-ganadora animate__animated animate__fadeIn" style="display: none;">
+        <div class="gg-ez">gg ez!</div>
+        <div class="nombre-heroe-a-adivinar"><span id="NombreHeroeAdivinado"></span></div>
+        <div class=""><img class="imagen-heroe-a-adivinar" id="ImagenHeroeAdivinado" src="" alt="Mi imagen"></div>
+        <div class="numero-de-intentos">Intentos: <span id="NumeroDeIntentosUsados"></span></div>
+        <div class="numero-de-intentos">Puntuación: <span id="PuntuacionTotal"></span></div>
+        <div class="boton-container"><button>Siguiente héroe</button></div>
+        <div class="boton-container"><button>Adivina la habilidad</button></div>
+    </div>
+    
     
     <div class="contenedor-kofi">
         <button class="boton-kofi" style="background-image: url(imagenes/kofi.png);"></button>
     </div>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </body>
 </html>

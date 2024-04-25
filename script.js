@@ -33,11 +33,12 @@ const datos = [
     { id: 32, Imagen: 'img_heroes\\Symmetra.png', Nombre: 'Symmetra', Genero: 'Femenino', Especie: 'Humano', Rol: 'DPS', Disparo_Principal: 'Rayo', Continente: 'Asia', Pais: 'India', Afiliacion: 'Vishkar', Edad: 30 },
     { id: 33, Imagen: 'img_heroes\\Torbjörn.png', Nombre: 'Torbjörn', Genero: 'Masculino', Especie: 'Humano', Rol: 'DPS', Disparo_Principal: 'Proyectil', Continente: 'Europa', Pais: 'Suecia', Afiliacion: 'Overwatch', Edad: 59 },
     { id: 34, Imagen: 'img_heroes\\Tracer.png', Nombre: 'Tracer', Genero: 'Femenino', Especie: 'Humano', Rol: 'DPS', Disparo_Principal: 'Hitscan', Continente: 'Europa', Pais: 'Inglaterra', Afiliacion: 'Overwatch', Edad: 28 },
-    { id: 35, Imagen: 'img_heroes\\Widowmaker.png', Nombre: 'Widowmaker', Genero: 'Femenino', Especie: 'Humano', Rol: 'DPS', Disparo_Principal: 'Hitscan', Continente: 'Europa', Pais: 'Francia', Afiliacion: 'Talon', Edad: 35 },
-    { id: 36, Imagen: 'img_heroes\\Winston.png', Nombre: 'Winston', Genero: 'Masculino', Especie: 'Animal', Rol: 'Tanque', Disparo_Principal: 'Rayo', Continente: 'La luna', Pais: 'Horizon', Afiliacion: 'Overwatch', Edad: 31 },
-    { id: 37, Imagen: 'img_heroes\\WreckingBall.png', Nombre: 'WreckingBall', Genero: 'Masculino', Especie: 'Animal', Rol: 'Tanque', Disparo_Principal: 'Hitscan', Continente: 'La luna', Pais: 'Horizon', Afiliacion: 'Chatarreros', Edad: 16 },
-    { id: 38, Imagen: 'img_heroes\\Zarya.png', Nombre: 'Zarya', Genero: 'Femenino', Especie: 'Humano', Rol: 'Tanque', Disparo_Principal: 'Rayo', Continente: 'Asia', Pais: 'Rusia', Afiliacion: 'Overwatch', Edad: 30 },
-    { id: 39, Imagen: 'img_heroes\\Zenyatta.png', Nombre: 'Zenyatta', Genero: 'Otro', Especie: 'Omnico', Rol: 'Apoyo', Disparo_Principal: 'Proyectil', Continente: 'Asia', Pais: 'Nepal', Afiliacion: 'Shambali', Edad: 33 }
+    { id: 35, Imagen: 'img_heroes\\Venture.png', Nombre: 'Venture', Genero: 'No Binario', Especie: 'Humano', Rol: 'DPS', Disparo_Principal: 'Proyectil', Continente: 'America', Pais: 'Canada', Afiliacion: 'Wayfinder', Edad: 26 },
+    { id: 36, Imagen: 'img_heroes\\Widowmaker.png', Nombre: 'Widowmaker', Genero: 'Femenino', Especie: 'Humano', Rol: 'DPS', Disparo_Principal: 'Hitscan', Continente: 'Europa', Pais: 'Francia', Afiliacion: 'Talon', Edad: 35 },
+    { id: 37, Imagen: 'img_heroes\\Winston.png', Nombre: 'Winston', Genero: 'Masculino', Especie: 'Animal', Rol: 'Tanque', Disparo_Principal: 'Rayo', Continente: 'La luna', Pais: 'Horizon', Afiliacion: 'Overwatch', Edad: 31 },
+    { id: 38, Imagen: 'img_heroes\\WreckingBall.png', Nombre: 'WreckingBall', Genero: 'Masculino', Especie: 'Animal', Rol: 'Tanque', Disparo_Principal: 'Hitscan', Continente: 'La luna', Pais: 'Horizon', Afiliacion: 'Chatarreros', Edad: 16 },
+    { id: 39, Imagen: 'img_heroes\\Zarya.png', Nombre: 'Zarya', Genero: 'Femenino', Especie: 'Humano', Rol: 'Tanque', Disparo_Principal: 'Rayo', Continente: 'Asia', Pais: 'Rusia', Afiliacion: 'Overwatch', Edad: 30 },
+    { id: 40, Imagen: 'img_heroes\\Zenyatta.png', Nombre: 'Zenyatta', Genero: 'Otro', Especie: 'Omnico', Rol: 'Apoyo', Disparo_Principal: 'Proyectil', Continente: 'Asia', Pais: 'Nepal', Afiliacion: 'Shambali', Edad: 33 }
 ];
 
 // Almacena los datos en localStorage
@@ -60,8 +61,15 @@ let indiceAleatorio = Math.floor(Math.random() * heroes_sin_adivinar.length);
 let selector_aleatorio = heroes_sin_adivinar[indiceAleatorio];
 var heroe_a_adivinar = datosAlmacenados[selector_aleatorio];
 var heroe_adivinado = false;
+var numero_de_intentos = 0
+let imagen_heroe_adivinado = heroe_a_adivinar.Imagen;
+let nombre_heroe_adivinado = heroe_a_adivinar.Nombre;
+let puntuacion_total_obtenida = 10000;
+let puntaje_de_tiempo = 0;
+let tiempo;
+document.getElementById("ImagenHeroeAdivinado").src = imagen_heroe_adivinado;
+document.getElementById("NombreHeroeAdivinado").innerText = nombre_heroe_adivinado;
 console.log(heroe_a_adivinar);
-
 
 
 //Input. Concexion con datos----------------------------------------------------------------------------------=>
@@ -147,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Crear la estructura de la tabla con estilos CSS
         var tablaHTML = `
-            <div class="contenedor-tabla">
+            <div class="contenedor-tabla animate__animated animate__fadeIn">
                 <div class="tabla-heroes-seleccionados">
                     <div class="imagen-container"><img src="${heroeEncontrado.Imagen}" alt="${heroeEncontrado.Nombre}"></div>
                     <div style="background-color: #08bf2d;">${heroeEncontrado.Genero}</div>
@@ -196,6 +204,61 @@ document.addEventListener("DOMContentLoaded", function() {
             tablaHTML = tablaHTML.replace('<div style="background-color: #08bf2d;">' + heroeEncontrado.Edad, '<div style="background-color: #d71611; background-image: url(\'iconos/flecha-hacia-abajo.png\'); background-size: cover; background-position: center; text-align: center;">' + heroeEncontrado.Edad,);
         }
 
+        //Intentos totales
+        numero_de_intentos = numero_de_intentos + 1;
+        document.getElementById("NumeroDeIntentosUsados").innerText = numero_de_intentos;
+
+        //Funcion para puntaje del tiempo
+        function puntajeTemporizador() {
+            puntaje_de_tiempo = puntaje_de_tiempo + 1;
+        }
+
+        //Funciones cuando se presiona el boton por primera vez
+        if (numero_de_intentos == 1) {
+            tiempo = setInterval(puntajeTemporizador, 10);
+            const aparecer_botones_de_pista = document.getElementById('id-contenedor-de-botones');
+            aparecer_botones_de_pista.style.display = 'flex';
+            aparecer_botones_de_pista.scrollIntoView({ behavior: 'smooth' });
+            const aparecer_texto_pista = document.getElementById('texto_pistas');
+            aparecer_texto_pista.style.display = 'block';
+            aparecer_texto_pista.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        //Funciones cuando se adivina el heroe aleatorio
+        if (heroe_a_adivinar.id == heroeEncontrado.id) {
+            //Puntaje del tiempo
+            clearInterval(tiempo);
+            if (puntaje_de_tiempo <= 6000) {
+                puntaje_de_tiempo = 9000 - puntaje_de_tiempo;
+            }else {
+                puntaje_de_tiempo = 1000;
+            }
+
+            //Efecto confenti
+            const jsConfetti = new JSConfetti()
+            jsConfetti.addConfetti()
+
+            //Desactivar boton de adivinar heroe
+            crearTablaBtn.disabled = true;
+
+            //Aparecer tabla con informacion al ganar
+            const aparecer_tarjeta_ganadora = document.getElementById('id-tarjeta-informacion-ganadora');
+            aparecer_tarjeta_ganadora.style.display = 'block';
+            aparecer_tarjeta_ganadora.scrollIntoView({ behavior: 'smooth' });
+
+            //Calculando el puntaje
+            if (numero_de_intentos == 1) {
+                puntuacion_total_obtenida = 20000;
+            }else if (numero_de_intentos >= 18){
+                puntuacion_total_obtenida = 1000;
+                puntuacion_total_obtenida = puntuacion_total_obtenida + puntaje_de_tiempo;
+            }else {
+                puntuacion_total_obtenida = puntuacion_total_obtenida - (numero_de_intentos * 500);
+                puntuacion_total_obtenida = puntuacion_total_obtenida + puntaje_de_tiempo;
+            }
+
+            document.getElementById("PuntuacionTotal").innerText = puntuacion_total_obtenida;
+        }
 
         // Agregar la estructura de la tabla al contenedor en la parte superior sin borrar el contenido anterior
         contenedorTabla.insertAdjacentHTML('afterbegin', tablaHTML);
@@ -210,6 +273,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         let inputBusqueda = document.getElementById("inputBusqueda");
         inputBusqueda.value = "";
+
+        //Eliminar heroe del input
+        let index = datosAlmacenados.indexOf(heroeEncontrado);
+        if (index > -1) {
+            datosAlmacenados.splice(index, 1);
+        }
+
     }
 
     // Agregar un evento de clic al botón para llamar a la función de crear tabla
