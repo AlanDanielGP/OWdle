@@ -33,6 +33,8 @@ body {
     font-family: ow-font;
 }
 
+
+
 /* Estilos de la tarjeta de indicaciones */
 .tarjeta-indicaciones {
     width: 60%;
@@ -65,8 +67,8 @@ body {
 
 /* Estilos de las indicaciones inferiores */
 .indicaciones-inferiores {
-    margin-top: 5px; /* Espaciado superior */
-    margin-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
     color: #979797;
     font-size: 1.1rem;
     font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
@@ -76,7 +78,17 @@ body {
     display: none;
     font-size: 1.1rem;
     font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
+    margin-top: 5px;
     margin-bottom: 0px;
+    color: #000000;
+}
+
+.turnos-para-pistas {
+    display: none;
+    font-size: 0.9rem;
+    font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
+    margin-bottom: 0px;
+    margin-top: 0px;
     color: #000000;
 }
 
@@ -116,13 +128,15 @@ body {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    font-size: max(1vw, 11px);
+    font-size: max(0.8vw, 11px);
     font-weight: bold;
     font-family: Friz Quadrata Std, Mobilo, Helvetica, Arial;
     text-align: center; /* Centrar el texto horizontalmente */
     padding-left: 5%;
     padding-right: 5%;
 }
+
+
 
 /*Input*/
 .contenedor-input-boton {
@@ -139,19 +153,23 @@ body {
     max-width: 400px;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
     box-sizing: border-box;
+    border-radius: 9999em;
 }
 
+
 .contenedor-input-boton button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
+    margin-left: 3px;
+    background-color: transparent;
     border: none;
-    border-radius: 0 5px 5px 0;
     cursor: pointer;
-    margin-left: 2px;
+    outline: none;
 }
+
+.contenedor-input-boton button:hover {
+    animation: tada 1.2s infinite;
+}
+
 
 .opciones {
     position: absolute;
@@ -167,6 +185,7 @@ body {
     display: none;
     top: calc(100% + 5px); /* Ajusta la posición de la lista debajo del input */
     left: 0; /* Ajusta la posición izquierda de la lista */
+    z-index: 1;
 }
 
 .opciones.visible {
@@ -191,14 +210,20 @@ body {
 }
 /*Final input*/
 
+
+
 /*Tabla heroes -----------------------------=>*/
-.contenedor-tabla {
+#contenedorTablaScroll {
     overflow-x: auto; /* Añadir barra de desplazamiento horizontal cuando sea necesario */
     overflow-y: hidden; /* Ocultar la barra de desplazamiento vertical */
+    white-space: nowrap; /* Evitar que las tablas se rompan */
+}
+
+.contenedor-tabla-heroes {
     text-align: center; /* Centrar contenido horizontalmente */
     padding-left: 2px;
     position: relative;
-    z-index: -1;
+    z-index: 0;
 }
 
 .tabla-heroes-seleccionados {
@@ -206,7 +231,6 @@ body {
     opacity: 0; /* Configurar opacidad inicial */
     transition: opacity 0.5s ease; /* Agregar una transición de opacidad */
     height: 70px;
-    white-space: nowrap; /* Evitar que los elementos se envuelvan a la siguiente línea */
     padding-bottom: 5px;
     padding-top: 5px;
 }
@@ -241,13 +265,44 @@ body {
 }
 
 @media (max-width: 530px) {
-    .contenedor-tabla {
+    #contenedor-tabla {
         overflow-x: scroll; /* Añadir barra de desplazamiento horizontal fija */
     }
 
     .tabla-heroes-seleccionados {
         width: 100%; /* Ancho del contenedor igual al 100% */
     }
+
+    .tabla-heroes-seleccionados-leyenda {
+        width: 100%; /* Ancho del contenedor igual al 100% */
+    }
+}
+
+.contenedor-tabla-heroes-leyenda {
+    text-align: center; /* Centrar contenido horizontalmente */
+    padding-left: 2px;
+    position: relative;
+    z-index: 0;
+}
+
+.tabla-heroes-seleccionados-leyenda {
+    display: inline-flex;
+    height: 70px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    align-items: flex-end; /* Alinea los elementos al final del contenedor */
+}
+
+.tabla-heroes-seleccionados-leyenda div {
+    flex: 0 0 auto;
+    width: 70px; /* Ancho de los elementos */
+    height: 100%; /* Altura máxima igual a la altura del contenedor */
+    margin: 0 3px; /* Margen entre los elementos */
+    border-bottom: solid 1px #ffffff;
+    display: flex;
+    align-items: flex-end; /* Alinea el texto en la parte inferior */
+    justify-content: center;
+    color: #ffffff;
 }
 
 
@@ -344,3 +399,8 @@ body {
     background-color: transparent; /* Establecer el color de fondo transparente */
     background-repeat: no-repeat; /* Evitar que la imagen se repita */
 }
+  
+  audio {
+    width: 100%; /* Ajusta el ancho del reproductor al ancho del contenedor */
+    max-width: 350px; /* Establece el ancho máximo del reproductor */
+  }

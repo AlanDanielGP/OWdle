@@ -15,36 +15,58 @@
     <div class="tarjeta-indicaciones">
 
         <h2 class="indicaciones-superiores">ADIVINA EL HÉROE DE OW2!</h2>
-        <h3 class="indicaciones-inferiores">ESCRIBE CUALQUIER HÉROE PARA EMPEZAR</h3>
+        <h3 id="id-indicaciones-inferiores" class="indicaciones-inferiores">ESCRIBE CUALQUIER HÉROE PARA EMPEZAR</h3>
         <h3 class="texto-pistas" id="texto_pistas">Pistas</h3>
+        <p id="id-turnos-para-pistas" class="turnos-para-pistas">en <span id="id-turnos-para-pistas-entero">2</span> turnos</p>
 
         <div class="contenedor-botones" id="id-contenedor-de-botones">
             <div class="contenedor-boton-texto-pistas">
-                <button class="boton-pista" style="background-image: url('iconos/microfono-circular.png')"></button>
-                <button class="texto-boton-pista">Frase</button>
+                <button disabled id="id-boton-microfono" class="boton-pista" style="background-image: url('iconos/microfono-circular.png')"></button>
+                <button disabled id="id-texto-boton-microfono" class="texto-boton-pista">Frase</button>
             </div>
             <div class="contenedor-boton-texto-pistas">
-                <button class="boton-pista" style="background-image: url('iconos/mando.png')"></button>
-                <button class="texto-boton-pista">Habilidad</button>
+                <button disabled id="id-boton-mando" class="boton-pista" style="background-image: url('iconos/mando.png')"></button>
+                <button disabled id="id-texto-boton-mando" class="texto-boton-pista">Habilidad</button>
             </div>
             <div class="contenedor-boton-texto-pistas">
-                <button class="boton-pista" style="background-image: url('iconos/usuario.png')"></button>
-                <button class="texto-boton-pista">Silueta</button>
+                <button disabled id="id-boton-usuario" class="boton-pista" style="background-image: url('iconos/usuario.png')"></button>
+                <button disabled id="id-texto-boton-usuario" class="texto-boton-pista">Parte de skin</button>
             </div>
         </div>
+        <div id="contenedorLineaDeVoz" class="linea-de-voz-styles"></div>
+        <div id="contenedorHabilidad"></div>
+        <div id="contenedorSkin"></div>
     </div>
 
     <div class="contenedor-input-boton">
         <input id="inputBusqueda" type="text" placeholder="Escribe el nombre del héroe aquí...">
-        <button id="crearTablaBtn" type="button">uwu</button>
+        <button id="crearTablaBtn" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48" part="icon blz-icon">
+            <path fill="#ED6516" d="M13.9 13.901a14.284 14.284 0 0 1 20.2 0l4.043-4.042a20 20 0 0 0-28.286 0z"></path>
+            <path fill="#333E48" d="m39.312 11.135-4.063 4.062a14.29 14.29 0 0 1 .995 16.159L28.891 24l-4.006-9.413h-.02V27.31l7.938 7.938a14.29 14.29 0 0 1-17.606 0l7.939-7.938V14.636l-4.027 9.365-7.355 7.355a14.29 14.29 0 0 1 .997-16.159l-4.063-4.062a20.001 20.001 0 1 0 30.624 0"></path>
+        </svg></button>
         <div id="opciones" class="opciones"></div>
     </div>
-    <div id="contenedorTabla"></div>
+    <div id="contenedorTablaScroll" style="display: none;">
+        <div class="contenedor-tabla-heroes-leyenda">
+            <div class="tabla-heroes-seleccionados-leyenda">
+                <div>Imagen</div>
+                <div>Genero</div>
+                <div>Especie</div>
+                <div>Rol</div>
+                <div>Disparo<br>Principal</div>
+                <div>Continente</div>
+                <div>País</div>
+                <div>Afiliación</div>
+                <div>Edad</div>
+            </div>
+        </div>
+        <div id="contenedorTabla"></div>
+    </div>
 
     <div id="id-tarjeta-informacion-ganadora" class="tarjeta-informacion-ganadora animate__animated animate__fadeIn" style="display: none;">
         <div class="gg-ez">gg ez!</div>
         <div class="nombre-heroe-a-adivinar"><span id="NombreHeroeAdivinado"></span></div>
-        <div class=""><img class="imagen-heroe-a-adivinar" id="ImagenHeroeAdivinado" src="" alt="Mi imagen"></div>
+        <div class=""><img class="imagen-heroe-a-adivinar" id="ImagenHeroeAdivinado" src="" alt="Héroe a adivinar"></div>
         <div class="numero-de-intentos">Intentos: <span id="NumeroDeIntentosUsados"></span></div>
         <div class="numero-de-intentos">Puntuación: <span id="PuntuacionTotal"></span></div>
         <div class="boton-container"><button>Siguiente héroe</button></div>
