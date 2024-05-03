@@ -26,7 +26,7 @@
             </div>
             <div class="contenedor-boton-texto-pistas">
                 <button disabled id="id-boton-mando" class="boton-pista" style="background-image: url('iconos/mando.png')"></button>
-                <button disabled id="id-texto-boton-mando" class="texto-boton-pista">Habilidad</button>
+                <button disabled id="id-texto-boton-mando" class="texto-boton-pista">Ultimate</button>
             </div>
             <div class="contenedor-boton-texto-pistas">
                 <button disabled id="id-boton-usuario" class="boton-pista" style="background-image: url('iconos/usuario.png')"></button>
@@ -68,15 +68,21 @@
         <div class="nombre-heroe-a-adivinar"><span id="NombreHeroeAdivinado"></span></div>
         <div class=""><img class="imagen-heroe-a-adivinar" id="ImagenHeroeAdivinado" src="" alt="Héroe a adivinar"></div>
         <div class="numero-de-intentos">Intentos: <span id="NumeroDeIntentosUsados"></span></div>
-        <div class="numero-de-intentos">Puntuación: <span id="PuntuacionTotal"></span></div>
-        <div class="boton-container"><button>Siguiente héroe</button></div>
+        <div class="nombre-heroe-a-adivinar" id="contenedor-final-ganador"></div>
+        <div id="boton-final-ganador" class="boton-container"><button onclick="reloadPage()">Siguiente héroe</button></div>
         <div class="boton-container"><button>Adivina la habilidad</button></div>
-    </div>
-    
-    
+    </div>  
+
     <div class="contenedor-kofi">
-        <button class="boton-kofi" style="background-image: url(imagenes/kofi.png);"></button>
+        <button onclick="irAKoFi()" class="boton-kofi" style="background-image: url(imagenes/kofi.png);"></button>
     </div>
+
+    <form action="https://paypal.me/alandanielgomezpea?country.x=MX&locale.x=es_XC" method="post" target="_blank" style="text-align: center;">
+        <input type="hidden" name="hosted_button_id" value="LBGBZVKNDCC28" />
+        <input type="image" src="https://www.paypalobjects.com/es_XC/i/btn/btn_donate_SM.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donar con el botón PayPal" />
+        <img alt="" border="0" src="https://www.paypal.com/es_MX/i/scr/pixel.gif" width="1" height="1" />
+    </form>
+        
 
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>

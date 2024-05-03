@@ -122,6 +122,21 @@ body {
     padding-right: 5%;
 }
 
+.skin-pista {
+    width: 50%;
+    max-width: 180px;
+    height: auto;
+    border: 1px solid #ffffff;
+    margin-bottom: 5px;
+}
+
+.habilidad-pista {
+    width: 50%;
+    max-width: 180px;
+    height: auto;
+    margin-bottom: 5px;
+}
+
 .texto-boton-pista {
     width: 100%; /* Ancho relativo del botón de texto */
     height: max-content; /* Altura automática para ajustarse al contenido */
@@ -398,6 +413,7 @@ body {
     cursor: pointer;
     background-color: transparent; /* Establecer el color de fondo transparente */
     background-repeat: no-repeat; /* Evitar que la imagen se repita */
+    margin-bottom: 10px;
 }
   
   audio {
