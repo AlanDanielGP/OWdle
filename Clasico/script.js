@@ -857,13 +857,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (heroe_a_adivinar.Edad > heroeEncontrado.Edad) {
       tablaHTML = tablaHTML.replace(
         '<div style="background-color: #08bf2d;">' + heroeEncontrado.Edad,
-        "<div style=\"background-color: #d71611; background-image: url('iconos/flecha-hacia-arriba.png'); background-size: cover; background-position: center; text-align: center;\">" +
+        "<div style=\"background-color: #d71611; background-image: url('../iconos/flecha-hacia-arriba.png'); background-size: cover; background-position: center; text-align: center;\">" +
           heroeEncontrado.Edad
       );
     } else if (heroe_a_adivinar.Edad < heroeEncontrado.Edad) {
       tablaHTML = tablaHTML.replace(
         '<div style="background-color: #08bf2d;">' + heroeEncontrado.Edad,
-        "<div style=\"background-color: #d71611; background-image: url('iconos/flecha-hacia-abajo.png'); background-size: cover; background-position: center; text-align: center;\">" +
+        "<div style=\"background-color: #d71611; background-image: url('../iconos/flecha-hacia-abajo.png'); background-size: cover; background-position: center; text-align: center;\">" +
           heroeEncontrado.Edad
       );
     }

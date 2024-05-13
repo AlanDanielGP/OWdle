@@ -646,7 +646,7 @@ let heroes_para_input = datosAlmacenados.slice(); // Crear una copia independien
 var heroe_adivinado = false;
 var numero_de_intentos = 0;
 var crearTablaBtn = document.getElementById("crearTablaBtn");
-let heroe_a_adivinar = datosAlmacenados[14];
+let heroe_a_adivinar = datosAlmacenados[27];
 let imagen_heroe_adivinado = heroe_a_adivinar.Imagen;
 let nombre_heroe_adivinado = heroe_a_adivinar.Nombre;
 document.getElementById("ImagenHeroeAdivinado").src = imagen_heroe_adivinado;
@@ -817,13 +817,13 @@ document.addEventListener("DOMContentLoaded", function () {
     if (heroe_a_adivinar.Edad > heroeEncontrado.Edad) {
       tablaHTML = tablaHTML.replace(
         '<div style="background-color: #08bf2d;">' + heroeEncontrado.Edad,
-        "<div style=\"background-color: #d71611; background-image: url('iconos/flecha-hacia-arriba.png'); background-size: cover; background-position: center; text-align: center;\">" +
+        "<div style=\"background-color: #d71611; background-image: url('../iconos/flecha-hacia-arriba.png'); background-size: cover; background-position: center; text-align: center;\">" +
           heroeEncontrado.Edad
       );
     } else if (heroe_a_adivinar.Edad < heroeEncontrado.Edad) {
       tablaHTML = tablaHTML.replace(
         '<div style="background-color: #08bf2d;">' + heroeEncontrado.Edad,
-        "<div style=\"background-color: #d71611; background-image: url('iconos/flecha-hacia-abajo.png'); background-size: cover; background-position: center; text-align: center;\">" +
+        "<div style=\"background-color: #d71611; background-image: url('../iconos/flecha-hacia-abajo.png'); background-size: cover; background-position: center; text-align: center;\">" +
           heroeEncontrado.Edad
       );
     }
@@ -1111,37 +1111,6 @@ function actualizarCuentaRegresiva() {
 }
 // Inicia la cuenta regresiva al cargar la página
 actualizarCuentaRegresiva();
-
-
-
-// Función para ejecutar tu tarea
-function miFuncion() {
-    limpiarCache();
-    heroe_a_adivinar = datosAlmacenados[26];
-}
-
-// Función para programar la ejecución de miFuncion para el día siguiente
-function programarEjecucion() {
-    // Obtener la fecha actual
-    const ahora = new Date();
-
-    // Obtener la fecha objetivo (13 de mayo de 2024)
-    const fechaObjetivo = new Date(2024, 4, 13); // El mes se indexa desde 0, por eso 4 representa mayo
-
-    // Comprobar si la fecha actual es menor que la fecha objetivo
-    if (ahora < fechaObjetivo) {
-        // Calcular la diferencia de tiempo entre la fecha actual y la fecha objetivo
-        const tiempoRestante = fechaObjetivo - ahora;
-
-        // Programar la ejecución de miFuncion para la fecha objetivo
-        setTimeout(function() {
-            miFuncion();
-        }, tiempoRestante);
-    }
-}
-// Iniciar el proceso de programación
-programarEjecucion();
-
 
 
 function limpiarCache() {

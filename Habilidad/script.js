@@ -353,8 +353,11 @@ const datosAlmacenados = [
   },
 ];
 
-let heroe_a_adivinar_f = datosAlmacenados[2];
-let habilidad_a_adivinar = datosAlmacenados[2].Q;
+let heroe_a_adivinar_f = datosAlmacenados[14];
+let habilidad_a_adivinar = datosAlmacenados[14].Q;
+const imagenHabilidadHTML = document.getElementById("imagen-habilidad-a-adivinar");
+imagenHabilidadHTML.src = habilidad_a_adivinar;
+
 var numero_de_intentos = 0;
 
 //Input. Concexion con datos----------------------------------------------------------------------------------=>
@@ -578,44 +581,3 @@ function actualizarCuentaRegresiva() {
 // Inicia la cuenta regresiva al cargar la página
 actualizarCuentaRegresiva();
 
-// Función para ejecutar tu tarea
-function miFuncion() {
-  limpiarCache();
-  heroe_a_adivinar_f = datosAlmacenados[21];
-  habilidad_a_adivinar = datosAlmacenados[2].DSecundario;
-}
-
-// Función para programar la ejecución de miFuncion para el día siguiente
-function programarEjecucion() {
-  // Obtener la fecha actual
-  const ahora = new Date();
-
-  // Obtener la fecha objetivo (13 de mayo de 2024)
-  const fechaObjetivo = new Date(2024, 4, 13); // El mes se indexa desde 0, por eso 4 representa mayo
-
-  // Comprobar si la fecha actual es menor que la fecha objetivo
-  if (ahora < fechaObjetivo) {
-    // Calcular la diferencia de tiempo entre la fecha actual y la fecha objetivo
-    const tiempoRestante = fechaObjetivo - ahora;
-
-    // Programar la ejecución de miFuncion para la fecha objetivo
-    setTimeout(function () {
-      miFuncion();
-    }, tiempoRestante);
-  }
-}
-// Iniciar el proceso de programación
-programarEjecucion();
-
-function limpiarCache() {
-  // Cambia la versión de los recursos agregando una cadena de consulta con la fecha actual
-  var recursos = document.querySelectorAll("link[href], script[src], img[src]");
-  recursos.forEach(function (recurso) {
-    var url = recurso.getAttribute("href") || recurso.getAttribute("src");
-    if (url) {
-      var nuevaUrl = url + "?v=" + new Date().getTime();
-      recurso.setAttribute("href", nuevaUrl);
-      recurso.setAttribute("src", nuevaUrl);
-    }
-  });
-}
