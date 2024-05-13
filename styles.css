@@ -46,8 +46,8 @@ body {
   width: 80%;
   height: 50px;
   border-radius: 30px;
-  background-color: #25384b;
-  border: 2px solid #f06414;
+  background-color: #3b678e;
+  border: 2px solid #4d81aa;
   margin-bottom: 10px;
   cursor: pointer;
   text-align: left;
@@ -69,8 +69,8 @@ body {
   border-radius: 50px;
   background-size: 60%; /* Ajustar la imagen para que quepa completamente dentro del botón */
   background-position: center; /* Centrar la imagen dentro del botón */
-  background-color: #25384b;
-  border: 2px solid #f06414;
+  background-color: #3b678e;
+  border: 2px solid #4d81aa;
   border-radius: 40px;
   cursor: pointer;
   background-repeat: no-repeat; /* Evitar que la imagen se repita */
@@ -85,8 +85,8 @@ body {
   padding: 1px 20px 1px 20px;
   text-align: center;
   border-radius: 8px;
-  background: #19191ad3;
-  border: 1px solid #ffffff;
+  background-color: #3b678e;
+  border: 2px solid #4d81aa;
   margin-top: 50px;
 }
 
