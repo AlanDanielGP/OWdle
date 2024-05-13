@@ -1,16 +1,16 @@
 //Funciones para botones de navegacion
 function irAClasico() {
-    var urlInicio = "../Clasico/index.html";
+    var urlInicio = "Clasico/index.html";
     window.location.href = urlInicio;
   }
   
   function irAHabilidad() {
-    var urlInicio = "../Habilidad/index.html";
+    var urlInicio = "Habilidad/index.html";
     window.location.href = urlInicio;
   }
   
   function irADailyMode() {
-    var urlClasico = "../DailyMode/index.html";
+    var urlClasico = "DailyMode/index.html";
     window.location.href = urlClasico;
   }
   
