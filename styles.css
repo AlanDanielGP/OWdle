@@ -2,7 +2,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("..\\imagenes/fondo.jpg");
+  background-image: url("imagenes/fondo.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -12,12 +12,12 @@ body {
 /* Fuentes personalizadas */
 @font-face {
   font-family: "ow-font";
-  src: url("..\\fuentes/OVERWATCH.ttf");
+  src: url("fuentes/OVERWATCH.ttf");
 }
 
 @font-face {
   font-family: "dle-font";
-  src: url("..\\fuentes/ethnocentricrg.otf") format("opentype");
+  src: url("fuentes/ethnocentricrg.otf") format("opentype");
 }
 
 /* Encabezado del sitio */
